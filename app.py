@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-API_KEY = os.getenv("HENRIK_API_KEY")
+API_KEY = os.getenv("API_KEY")
 NOMBRE = "Nayecute Twitch"
 TAG = "965"
 REGION = "na"
