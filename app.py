@@ -2,7 +2,7 @@ from flask import Flask, Response
 import requests
 import os
 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 API_KEY = os.environ.get("API_KEY")
 NOMBRE = "Nayecute Twitch"
