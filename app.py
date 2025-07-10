@@ -2,6 +2,7 @@ from flask import Flask, Response
 import requests
 import os
 
+
 app = Flask(__name__)
 
 API_KEY = "HDEV-0e4e1574-46f9-4bef-b3fa-cef596d2e1a9"
