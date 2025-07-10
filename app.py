@@ -7,7 +7,7 @@ app = Flask(__name__)
 API_KEY = "HDEV-0e4e1574-46f9-4bef-b3fa-cef596d2e1a9"
 NOMBRE = "Nayecute Twitch"
 TAG = "965"
-REGION = "na"
+REGION = "latam"
 
 @app.route('/rango')
 def rango():
