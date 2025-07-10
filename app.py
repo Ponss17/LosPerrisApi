@@ -4,10 +4,14 @@ import os
 
 app = Flask(__name__)
 
-API_KEY = "HDEV-0e4e1574-46f9-4bef-b3fa-cef596d2e1a9"
+API_KEY = os.getenv("HENRIK_API_KEY")
 NOMBRE = "Nayecute Twitch"
 TAG = "965"
-REGION = "latam"
+REGION = "na"
+
+@app.route('/')
+def index():
+    return "API Valorant funcionando"
 
 @app.route('/rango')
 def rango():
@@ -15,10 +19,16 @@ def rango():
     try:
         res = requests.get(url)
         data = res.json()
+
         rango = data['data']['current_data']['currenttierpatched']
-    except Exception:
-        rango = "Rango no disponible"
-    return Response(rango, mimetype='text/plain')
+        puntos = data['data']['current_data']['ranking_in_tier']
+        mmr = data['data']['mmr_change_to_last_game']
+
+        respuesta = f"{rango} con {puntos} puntos, mi última partida [{mmr:+d}]"
+    except Exception as e:
+        print("Error:", e)
+        respuesta = "Rango no disponible"
+    return Response(respuesta, mimetype='text/plain')
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
