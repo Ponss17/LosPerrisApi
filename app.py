@@ -15,7 +15,7 @@ def rango():
     try:
         res = requests.get(url)
         data = res.json()
-        rango = data['data']['current_data']['currenttier_patched']
+        rango = data['data']['current_data']['currenttierpatched']
     except Exception:
         rango = "Rango no disponible"
     return Response(rango, mimetype='text/plain')
