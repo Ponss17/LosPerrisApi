@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-API_KEY = os.getenv("API_KEY")
+API_KEY = "HDEV-0e4e1574-46f9-4bef-b3fa-cef596d2e1a9"
 NOMBRE = "Nayecute Twitch"
 TAG = "965"
 REGION = "na"
@@ -19,12 +19,13 @@ def rango():
     try:
         res = requests.get(url)
         data = res.json()
+        print("Respuesta:", data)  # 👈 Para ver qué está pasando en logs
 
         rango = data['data']['current_data']['currenttierpatched']
         puntos = data['data']['current_data']['ranking_in_tier']
         mmr = data['data']['mmr_change_to_last_game']
 
-        respuesta = f"{rango} con {puntos} puntos, mi última partida [{mmr}]"
+        respuesta = f"{rango} con {puntos} puntos, mi última partida [{mmr:+d}]"
     except Exception as e:
         print("Error:", e)
         respuesta = "Rango no disponible"
