@@ -24,7 +24,7 @@ def rango():
         puntos = data['data']['current_data']['ranking_in_tier']
         mmr = data['data']['mmr_change_to_last_game']
 
-        respuesta = f"{rango} con {puntos} puntos, mi última partida [{mmr:+d}]"
+        respuesta = f"{rango} con {puntos} puntos, mi última partida [{mmr}]"
     except Exception as e:
         print("Error:", e)
         respuesta = "Rango no disponible"
