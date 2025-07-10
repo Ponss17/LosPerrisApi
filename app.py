@@ -19,7 +19,7 @@ def rango():
     try:
         res = requests.get(url)
         data = res.json()
-        print("Respuesta:", data)  # 👈 Para ver qué está pasando en logs
+        print("Respuesta:", data)  
 
         rango = data['data']['current_data']['currenttierpatched']
         puntos = data['data']['current_data']['ranking_in_tier']
