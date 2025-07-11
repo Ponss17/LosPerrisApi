@@ -3,6 +3,7 @@ import requests
 import os
 import threading
 import time
+from rangos_es import Rangos_ES
 
 app = Flask(__name__) 
 
@@ -26,7 +27,8 @@ def rango():
         if not current_data:
             return Response("No hay datos actuales disponibles.", mimetype='text/plain')
 
-        rango = current_data.get('currenttierpatched', 'Desconocido')
+        rango_en = current_data.get('currenttierpatched', 'Desconocido')
+        rango = Rangos_ES.get(rango_en, rango_en)
         puntos = current_data.get('ranking_in_tier', 'Desconocido')
         mmr_change = current_data.get('mmr_change_to_last_game', 'Desconocido')
 
@@ -50,3 +52,4 @@ threading.Thread(target=auto_ping, daemon=True).start()
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
