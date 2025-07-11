@@ -26,3 +26,4 @@ Rangos_ES = {
     "Radiant": "Radiante",
 }
 
+#Si alguien ve esto es nomas para que aparezcan en español JAJAJAJ, Es que me da cosita.
