@@ -13,7 +13,7 @@ REGION = "na"
 
 @app.route('/')
 def index():
-    return "API Valorant funcionando"
+    return "funcionando jiji :)"
 
 @app.route('/rango')
 def rango():
