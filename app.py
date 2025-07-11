@@ -1,6 +1,8 @@
 from flask import Flask, Response
 import requests
 import os
+import threading
+import time
 
 app = Flask(__name__) 
 
@@ -34,7 +36,17 @@ def rango():
         respuesta = "Rango no disponible"
     return Response(respuesta, mimetype='text/plain')
 
+def auto_ping():
+    while True:
+        try:
+            print("⏳ Haciendo auto-ping...")
+            requests.get("https://naye-api.onrender.com/")
+        except Exception as e:
+            print(f"Error en auto-ping: {e}")
+        time.sleep(300)
+
+threading.Thread(target=auto_ping, daemon=True).start()
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
-
