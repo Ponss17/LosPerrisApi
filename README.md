@@ -23,7 +23,6 @@ Mantener la API despierta:
 - Render Free apaga servicios si no reciben visitas.
 - Usa UptimeRobot para hacer ping cada 5 minutos y mantenerla activa.
 
-Nota final:
 Hecho con cariño para **[Naye en Twitch](https://www.twitch.tv/nayecutee)** ❤️  
 Usando la API de HenrikDev para traer datos oficiales de Valorant.  
-Puedes usarla libremente y adaptarla para otros jugadores cambiando los datos arriba. 
+Puedes usarla libremente y adaptarla para otros jugadores cambiando los datos arriba :). 
