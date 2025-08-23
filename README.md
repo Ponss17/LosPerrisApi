@@ -8,15 +8,15 @@ Endpoints:
 - `/rango` → Devuelve el rango actual, puntos y cambio de MMR en la última partida: Mi rango actual es Diamante 2 con 53 puntos 🤗✨, Mi última partida: [+18]
 
 Variables necesarias:
-- API_KEY → tu API key de HenrikDev
-- PORT → Render lo maneja automáticamente
+- `API_KEY` → tu API key de HenrikDev
+- `PORT` → Render lo maneja automáticamente
 
 Personalizar para otro jugador:
 Si quieres mostrar el rango de otro jugador de Valorant, cambia estas variables en el código:
 
-- NOMBRE = "NombreDelJugador"
-- TAG = "1234"  # El número de su tag
-- REGION = "na"  # ej: na, eu, kr, etc.
+- `NOMBRE` = "NombreDelJugador"
+- `TAG` = "1234"  # El número de su tag
+- `REGION` = "na"  # ej: na, eu, kr, etc.
 Luego la API seguirá funcionando igual, solo que mostrará los datos del jugador que hayas configurado.
 
 Mantener la API despierta:
