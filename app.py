@@ -12,7 +12,7 @@ REGION = "na"
 
 @app.route('/')
 def index():
-    return "funcionando jiji :)"
+    return "funcionando jiji, cualquier duda con ponsscito :)"
 
 @app.route('/rango')
 def rango():
